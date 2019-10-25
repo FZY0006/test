@@ -1,0 +1,56 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.tb{ 
+    border-bottom: 3px solid black;
+    font-size: 23px;
+    background-color: #ffadd2;
+    padding: 15px 90px;
+    overflow: hidden;
+}
+.tb img{
+    width: 28px;
+    height: 28px;
+   
+}
+.tb a{
+    float: right;
+    font-size: 13px;
+    padding: 10px 15px;
+    margin: 1px ;
+}
+.tb a:hover{
+    background-color: #eb2f96;
+    color: #000;
+}
+.xhdy{
+    text-align: center;
+    font-size: 23px;
+    font-weight: bold;
+}
+.xhdy hr{
+    width: 100px;
+    height: 3px;
+    background-color: purple;
+}
+.dy{
+    text-align: center;
+    float: left;
+    width: 20%;
+
+}
+.dy img{
+    width: 80%;
+}
+.zj{
+    float: left;
+    width: 40%;
+}
+.yb{
+    float: left;
+    width: 30%;
+}
+.wb{
+
+}
