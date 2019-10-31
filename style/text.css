@@ -14,7 +14,7 @@ body{
 .tb img{
     width: 28px;
     height: 28px;
-   
+   z-index: 9999;
 }
 .tb a{
     float: right;
