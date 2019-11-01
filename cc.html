@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  body {
+    margin: 0px;
+    padding: 0px;
+
+  }
+
+  #goods tr td {
+    border: 1px solid #000;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .spinner {
+    animation: rotation 3s linear infinite;
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+<body>
+  <h2>商品添加或删除</h2>
+  <div>
+    <table id="goods"> </table>
+
+    <img src="/test/tp/等待.png" class="spinner">
+  </div>
+  <div id="a1">
+    <button><p>1</p></button>
+    <button><p>5</p></button>
+    <button><p>5</p></button>
+    <button><p>5</p></button>
+  </div>
+
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <script>
+    $('.spinner').hide();
+    function zxx(a) {
+      axios.get('http://mock-api.com/vzMM59zG.mock/products?past=' + a)
+        .then(function (res) {
+          console.log('res', res);
+          for (var index in res.data) {
+            $('#goods').append('<tr>' + '<td>' + res.data[index].name + '</td>'
+              + '<td>' + res.data[index].price + '</td>' + '<td>' + res.data[index].created_at + '</td>' + '</tr>');
+          }
+        })
+        $('.spinner').hide();
+    }
+  </script>
+  <script>
+    $('#a1 button').click(function () {
+      var a;
+      a = $(this).text();
+      // $(this).append(a);
+      $('#goods tr').remove();
+      $('.spinner').show();
+      zxx(a);
+    });
+  </script>
+
+</body>
+
+</html>
