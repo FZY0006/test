@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="/style/news.css">
+    <link rel="stylesheet" href="./style/news.css">
 </head>
 
 <body>
@@ -46,7 +46,7 @@
 
 
                 <script>
-                    axios.get('/apidata/api1')
+                    axios.get('./apidata/api1')
                         .then(function (res) {
                             console.log('res', res);
                             for (var index in res.data) {
@@ -58,7 +58,7 @@
                             }
                         })
                     function zxx(a) {
-                        axios.get('/apidata/api' + a)
+                        axios.get('./apidata/api' + a)
                             .then(function (res) {
                                 console.log('res', res);
                                 for (var index in res.data) {
